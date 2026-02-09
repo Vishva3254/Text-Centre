@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import PageWrapper from '../components/PageWrapper';
-import { capitalizeSentences } from '../utils/textUtils';
+import { capitalizeSentences } from '../utils/capitalizeUtils';
 
 const CapitalizePage: React.FC = () => {
   const [text, setText] = useState('');
@@ -18,7 +18,7 @@ const CapitalizePage: React.FC = () => {
   return (
     <PageWrapper 
       title="Sentence Capitalization" 
-      description="Automatically capitalize the first letter of every sentence in your paragraphs."
+      description="Automatically capitalize the first letter of every sentence in your paragraphs. Works globally with Unicode support."
     >
       <div className="mb-6 flex gap-4">
         <button

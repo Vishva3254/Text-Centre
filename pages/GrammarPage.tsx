@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import PageWrapper from '../components/PageWrapper';
 import { SUPPORTED_LANGUAGES, GrammarResult } from '../types';
-import { checkGrammar } from '../services/geminiService';
+import { checkGrammar } from '../services/grammarService';
 
 const GrammarPage: React.FC = () => {
   const [text, setText] = useState('');

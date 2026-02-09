@@ -1,8 +1,6 @@
 
-import { GoogleGenAI, Modality, Type } from "@google/genai";
-import { GrammarResult } from "../types";
+import { GoogleGenAI, Modality } from "@google/genai";
 
-// Implementation of the base64 decoding as per instructions
 function decode(base64: string) {
   const binaryString = atob(base64);
   const len = binaryString.length;
@@ -13,7 +11,6 @@ function decode(base64: string) {
   return bytes;
 }
 
-// Implementation of audio decoding from raw PCM
 async function decodeAudioData(
   data: Uint8Array,
   ctx: AudioContext,
@@ -33,41 +30,7 @@ async function decodeAudioData(
   return buffer;
 }
 
-export const checkGrammar = async (text: string, language: string): Promise<GrammarResult> => {
-  // Always use const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
-    contents: `Proofread and fix the following text in ${language}. Return the corrected text and a list of specific grammatical improvements. Text: "${text}"`,
-    config: {
-      responseMimeType: "application/json",
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          correctedText: { type: Type.STRING },
-          corrections: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                original: { type: Type.STRING },
-                replacement: { type: Type.STRING },
-                reason: { type: Type.STRING }
-              },
-              required: ['original', 'replacement', 'reason']
-            }
-          }
-        },
-        required: ['correctedText', 'corrections']
-      }
-    }
-  });
-
-  return JSON.parse(response.text || '{}');
-};
-
 export const generateSpeech = async (text: string, voiceName: string = 'Kore'): Promise<void> => {
-  // Always use const ai = new GoogleGenAI({apiKey: process.env.API_KEY});
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash-preview-tts",

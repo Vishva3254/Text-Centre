@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import PageWrapper from '../components/PageWrapper';
-import { getCalligraphyStyles } from '../utils/textUtils';
+import { getCalligraphyStyles } from '../utils/calligraphyUtils';
 
 const CalligraphyPage: React.FC = () => {
   const [inputText, setInputText] = useState('Text Centre');
@@ -15,13 +15,11 @@ const CalligraphyPage: React.FC = () => {
 
   const copy = (content: string) => {
     navigator.clipboard.writeText(content);
-    // Optional: simple feedback could be added here
   };
 
   const loadGoogleFont = (fontName: string) => {
     if (!fontName.trim()) return;
     
-    // Format font name for Google Fonts API (spaces to pluses)
     const formattedName = fontName.trim().split(' ').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
     ).join(' ');
@@ -29,7 +27,6 @@ const CalligraphyPage: React.FC = () => {
     const apiName = formattedName.replace(/ /g, '+');
     const linkId = `google-font-${apiName}`;
 
-    // Check if link already exists
     if (!document.getElementById(linkId)) {
       const link = document.createElement('link');
       link.id = linkId;
@@ -54,7 +51,6 @@ const CalligraphyPage: React.FC = () => {
       description="Convert text into social-media ready calligraphy or search and preview thousands of Google Fonts."
     >
       <div className="space-y-8">
-        {/* Main Input */}
         <div>
           <label className="block text-sm font-bold text-zinc-500 mb-2 uppercase tracking-wide">Your Text</label>
           <input
@@ -66,7 +62,6 @@ const CalligraphyPage: React.FC = () => {
           />
         </div>
 
-        {/* Google Fonts Search */}
         <div className="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100">
           <label className="block text-sm font-bold text-indigo-600 mb-3 uppercase tracking-wide">Search Google Fonts</label>
           <div className="flex gap-3">
@@ -90,10 +85,8 @@ const CalligraphyPage: React.FC = () => {
               Find Font
             </button>
           </div>
-          <p className="mt-3 text-xs text-indigo-400">Previews use official Google Fonts CSS. Search by full name.</p>
         </div>
 
-        {/* Google Font Previews */}
         {searchedFonts.length > 0 && (
           <div className="space-y-4">
             <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-widest border-b border-zinc-100 pb-2">Google Font Results</h3>
@@ -119,7 +112,6 @@ const CalligraphyPage: React.FC = () => {
                     <button 
                       onClick={() => copy(inputText)}
                       className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-500 hover:text-indigo-600 hover:border-indigo-200 transition-all"
-                      title="Copy Plain Text"
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -128,7 +120,6 @@ const CalligraphyPage: React.FC = () => {
                     <button 
                       onClick={() => removeSearchedFont(font)}
                       className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 text-zinc-400 hover:text-rose-500 hover:border-rose-200 transition-all"
-                      title="Remove"
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
@@ -141,9 +132,8 @@ const CalligraphyPage: React.FC = () => {
           </div>
         )}
 
-        {/* Character-Mapped Calligraphy */}
         <div className="space-y-4 pt-4">
-          <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-widest border-b border-zinc-100 pb-2">Copyable Social Media Styles</h3>
+          <h3 className="text-sm font-bold text-zinc-400 uppercase tracking-widest border-b border-zinc-100 pb-2">Social Media Styles</h3>
           <div className="grid grid-cols-1 gap-4">
             {styles.map((style) => (
               <button
@@ -164,13 +154,6 @@ const CalligraphyPage: React.FC = () => {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="mt-12 p-6 bg-zinc-900 rounded-2xl text-white">
-        <h4 className="font-bold mb-2">Pro Tip:</h4>
-        <p className="text-zinc-400 text-sm leading-relaxed">
-          The <span className="text-white font-semibold">Social Media Styles</span> use special mathematical characters that look like calligraphy. These can be copied and pasted into Instagram bios or Twitter posts. <span className="text-indigo-400">Google Fonts</span> are used for high-fidelity design previews on the web.
-        </p>
       </div>
     </PageWrapper>
   );

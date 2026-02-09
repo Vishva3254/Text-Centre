@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import PageWrapper from '../components/PageWrapper';
-import { getStats } from '../utils/textUtils';
+import { getStats } from '../utils/statsUtils';
 
 const CounterPage: React.FC = () => {
   const [text, setText] = useState('');
