@@ -1,0 +1,7 @@
+{
+  "name": "Text Centre",
+  "description": "A minimal, modern suite of text utility tools including word counting, grammar checking, text-to-speech, capitalization, and calligraphy styles.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
