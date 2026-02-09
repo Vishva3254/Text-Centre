@@ -23,7 +23,7 @@ const CounterPage: React.FC = () => {
           { label: 'Words', value: stats.words, color: 'text-blue-600' },
           { label: 'Characters', value: stats.characters, color: 'text-indigo-600' },
           { label: 'Sentences', value: stats.sentences, color: 'text-violet-600' },
-          { label: 'Paragraphs', value: stats.paragraphs, color: 'text-fuchsia-600' }
+          { label: 'Paragraphs', value: stats.paragraphs, color: 'text-rose-600' }
         ].map((item) => (
           <div key={item.label} className="bg-zinc-50 rounded-xl p-5 border border-zinc-100 flex flex-col items-center shadow-sm">
             <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">{item.label}</span>
@@ -34,7 +34,7 @@ const CounterPage: React.FC = () => {
 
       <div className="relative">
         <textarea
-          className="w-full h-[480px] p-8 bg-zinc-50 rounded-2xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-lg leading-relaxed placeholder:text-zinc-300 resize-none outline-none shadow-inner"
+          className="w-full h-[600px] p-8 bg-zinc-50 rounded-2xl border border-zinc-200 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-lg leading-relaxed placeholder:text-zinc-300 resize-none outline-none shadow-inner"
           placeholder="Paste or type your text here to analyze its structure..."
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -49,7 +49,7 @@ const CounterPage: React.FC = () => {
         </div>
       </div>
       <div className="mt-6 text-center">
-         <p className="text-zinc-400 text-xs">Analysis happens in real-time. No data is sent to our servers for basic counting.</p>
+         <p className="text-zinc-400 text-xs">Analysis happens in real-time. No data is sent to our servers for counting.</p>
       </div>
     </PageWrapper>
   );
