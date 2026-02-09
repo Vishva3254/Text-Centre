@@ -7,6 +7,7 @@ import GrammarPage from './pages/GrammarPage';
 import TTSPage from './pages/TTSPage';
 import CapitalizePage from './pages/CapitalizePage';
 import CalligraphyPage from './pages/CalligraphyPage';
+import SimilarityPage from './pages/SimilarityPage';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
               <Link to="/counter" className="hover:text-indigo-600 transition-colors">Counter</Link>
               <Link to="/grammar" className="hover:text-indigo-600 transition-colors">Grammar</Link>
               <Link to="/tts" className="hover:text-indigo-600 transition-colors">Speech</Link>
+              <Link to="/similarity" className="hover:text-indigo-600 transition-colors">Similarity</Link>
               <Link to="/capitalize" className="hover:text-indigo-600 transition-colors">Capitalize</Link>
               <Link to="/calligraphy" className="hover:text-indigo-600 transition-colors">Styles</Link>
             </div>
@@ -36,6 +38,7 @@ const App: React.FC = () => {
             <Route path="/counter" element={<CounterPage />} />
             <Route path="/grammar" element={<GrammarPage />} />
             <Route path="/tts" element={<TTSPage />} />
+            <Route path="/similarity" element={<SimilarityPage />} />
             <Route path="/capitalize" element={<CapitalizePage />} />
             <Route path="/calligraphy" element={<CalligraphyPage />} />
           </Routes>

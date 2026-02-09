@@ -15,7 +15,8 @@ export enum ToolType {
   GRAMMAR = 'grammar',
   TTS = 'tts',
   CAPITALIZE = 'capitalize',
-  CALLIGRAPHY = 'calligraphy'
+  CALLIGRAPHY = 'calligraphy',
+  SIMILARITY = 'similarity'
 }
 
 export interface Language {

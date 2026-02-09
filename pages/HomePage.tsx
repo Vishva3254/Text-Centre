@@ -26,6 +26,17 @@ const tools = [
     color: 'bg-emerald-50 text-emerald-600'
   },
   {
+    title: 'Text Similarity',
+    description: 'Compare two texts to find Lexical and Semantic commonalities.',
+    path: '/similarity',
+    icon: (
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+      </svg>
+    ),
+    color: 'bg-indigo-50 text-indigo-600'
+  },
+  {
     title: 'Text to Audio',
     description: 'Convert your text into high-quality natural speech with AI.',
     path: '/tts',
