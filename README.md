@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Text Centre
 
-# Run and deploy your AI Studio app
+A minimal, modern, and powerful suite of text utility tools designed for the modern web. Text Centre provides an all-in-one workspace for your daily text processing needs, from simple word counting to advanced AI-powered grammar correction.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
 
-View your app in AI Studio: https://ai.studio/apps/fb236e24-6696-4b51-9c53-4b71f9c21831
+Text Centre is packed with essential tools to help you write better and work faster:
 
-## Run Locally
+-   **📝 Text Counter**: Get instant statistics on your text, including word count, character count, and reading time.
+-   **🤖 AI Grammar Checker**: Powered by Google Gemini, our grammar tool identifies errors and suggests natural improvements to your writing.
+-   **🔊 Text-to-Speech**: Convert your written content into clear, natural-sounding speech directly in your browser.
+-   **🔍 Similarity Analysis**: Compare two pieces of text to find their similarity score using advanced machine learning models.
+-   **🔠 Capitalization Tools**: Quickly switch between UPPERCASE, lowercase, Title Case, and Sentence case with a single click.
+-   **✨ Calligraphy Styles**: Transform your plain text into beautiful, artistic styles for social media, headers, or creative projects.
 
-**Prerequisites:**  Node.js
+## 💎 Benefits
 
+-   **Free Forever**: All tools are completely free to use without any hidden costs or premium tiers.
+-   **No Signup Required**: Start using the tools immediately. We don't ask for your email or personal information.
+-   **Privacy First**: Your text is processed securely. We don't store your private content.
+-   **AI-Powered**: Leverage the latest in Generative AI (Google Gemini) for high-quality text analysis.
+-   **Modern UI/UX**: A clean, distraction-free interface built with Tailwind CSS and React for a smooth experience.
+-   **Responsive Design**: Works perfectly on desktops, tablets, and mobile devices.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠️ Built With
+
+-   **React 19**: The latest version of the world's most popular UI library.
+-   **Tailwind CSS v4**: For a sleek, high-performance, and modern design.
+-   **Google Gemini API**: Providing state-of-the-art AI capabilities.
+-   **Xenova Transformers**: Running machine learning models directly in your browser.
+-   **Vite**: For lightning-fast development and optimized production builds.
+
+---
+
+Built with ❤️ for writers, developers, and students everywhere.
